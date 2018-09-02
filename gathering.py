@@ -7,21 +7,6 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-
-def gather_process():
-    logger.info("gather")
-    pass
-    # You can also pass a storage
-
-
-def convert_data_to_table_format():
-    logger.info("transform")
-
-    # Your code here
-    # transform gathered data from txt file to pandas DataFrame and save as csv
-    pass
-
-
 def stats_of_data():
     df = pd.read_csv("books.csv")
     print(df.describe())
@@ -41,13 +26,7 @@ if __name__ == '__main__':
     """
     logger.info("Work started")
 
-    if sys.argv[1] == 'gather':
-        gather_process()
-
-    elif sys.argv[1] == 'transform':
-        convert_data_to_table_format()
-
-    elif sys.argv[1] == 'stats':
+    if sys.argv[1] == 'stats':
         stats_of_data()
 
     logger.info("work ended")
